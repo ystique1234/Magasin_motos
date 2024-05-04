@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title "Listes des motos" %}
+
+
+{% block body %}
+
+
+
+
+
+<h1>L'identification de chaque motos</h1>
+<div class = "container text-center">
+ <div class = "row">
+  {% for moto in motos %}
+  <div class="card max-w-sm col-4 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 my-8 mr-4" data-type="post">
+        <h3><a href={{ path('app_moto_show', {id: moto.id, slug: moto.marque})}}>{{ moto.marque}}</a></h3>
+        <img src = "https://th.bing.com/th/id/OIP.8Hk1xEBHy4VtfC6ggv3jPwHaEK?rs=1&pid=ImgDetMain" width="150" height="200">
+        </div>
+        {% else %}
+        <p> pas encore de motos</p>
+        {% endfor %}
+    
+
+{% endblock %}
